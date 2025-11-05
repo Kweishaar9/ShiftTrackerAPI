@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "Kyle",
+    "HourlyWage": 18.25,
+    "HoursScheduled": 25
+  },
+  {
+    "Name": "John",
+    "HourlyWage": 16.25,
+    "HoursScheduled": 15
+  },
+  {
+    "Name": "Nick",
+    "HourlyWage": 16.75,
+    "HoursScheduled": 30
+  },
+  {
+    "Name": "Ben",
+    "HourlyWage": 17.5,
+    "HoursScheduled": 47
+  }
+]
