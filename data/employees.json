@@ -18,5 +18,10 @@
     "Name": "Ben",
     "HourlyWage": 17.5,
     "HoursScheduled": 47
+  },
+  {
+    "Name": "Curby W",
+    "HourlyWage": 21.5,
+    "HoursScheduled": 40
   }
 ]

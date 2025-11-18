@@ -11,7 +11,7 @@
         <header>
             <h1>SHIFTRAC</h1>
         </header>
-        <div class="requestDiv"">
+        <div class="requestDiv">
             <h2>Employees</h2>
             <button class="requestButton" id="loadEmployees">V</button>
             <ul id="employeesList"></ul>
@@ -26,8 +26,13 @@
 
         <div class="requestDiv">
             <h2>Add Employee</h2>
-            <button class="requestButton" id="addEmployeeButton">V
-            </button>
+            <form id="addEmployeeForm">
+                <input type="text" id="empName" placeholder="Name" required>
+                <input type="number" id="empWage" placeholder="Hourly Wage" step="0.01" required>
+                <input type="number" id="empHours" placeholder="Hours Scheduled" min="0" required>
+                <button type="submit">Add Employee</button>
+            </form>
+           <p id="addEmpMessage"></p>
         </div>
 
 
