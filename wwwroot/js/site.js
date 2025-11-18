@@ -1,4 +1,4 @@
-﻿document.getElementById("loadEmployees").addEventListener("click", async () => {
+﻿document.getElementById("loadEmployees").addEventListener("click", async (e) => {
     try{
         const response = await fetch("/employees");
 
@@ -25,7 +25,7 @@
 });
 
 
-document.getElementById("loadReport").addEventListener("click", async () => {
+document.getElementById("loadReport").addEventListener("click", async (e) => {
     try{
         const response = await fetch("/report/weekly");
 
@@ -91,5 +91,32 @@ document.getElementById("addEmployeeForm").addEventListener("submit", async (e) 
     } catch (error) {
         console.error("Fetch error:", error);
         document.getElementById("addEmpMessage").textContent = "Failed to connect to server";
+    }
+});
+
+document.getElementById("deleteEmpForm").addEventListener("submit", async (e) =>{
+    e.preventDefault();
+
+    const name = document.getElementById("delEmpName").value; 
+
+    try{
+        const response = await fetch(`/employees/${encodeURIComponent(name)}`, {
+            method: "DELETE",
+
+        });
+
+        if (!response.ok){
+                document.getElementById("delEmpMessage").textContent = "Error: " + response.statusText;
+                return;
+        }
+
+        const result = await response.json();
+
+        document.getElementById("delEmpMessage").textContent = `Employee '${result.name}' deleted successfuly!`;
+
+        document.getElementById("deleteEmpForm").reset();
+    } catch (error){
+        console.error("Fetch error:", error)
+        document.getElementById("delEmpMessage").textContent = "Failed to connect to server";
     }
 });

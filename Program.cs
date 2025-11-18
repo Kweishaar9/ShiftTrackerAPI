@@ -129,7 +129,7 @@ app.MapGet("/hello", () =>
 .WithName("ShiftTracker")
 .WithOpenApi();
 
-app.MapFallback(async context =>
+app.MapGet("/", async context =>
 {
     context.Response.ContentType = "text/html";
     await context.Response.SendFileAsync("wwwroot/index.html");
