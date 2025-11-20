@@ -102,7 +102,6 @@ document.getElementById("deleteEmpForm").addEventListener("submit", async (e) =>
     try{
         const response = await fetch(`/employees/${encodeURIComponent(name)}`, {
             method: "DELETE",
-
         });
 
         if (!response.ok){
@@ -119,4 +118,35 @@ document.getElementById("deleteEmpForm").addEventListener("submit", async (e) =>
         console.error("Fetch error:", error)
         document.getElementById("delEmpMessage").textContent = "Failed to connect to server";
     }
+});
+
+document.getElementById("updateEmpHoursForm").addEventListener("submit", async (e) =>{
+    e.preventDefault();
+
+    const name = document.getElementById("updateEmpHoursName").value;
+    const hours = parseInt(document.getElementById("updateEmpHours").value);
+    console.log(name);
+    console.log(hours);
+
+    try{
+        const response = await fetch(`/employees/${encodeURIComponent(name)}?newHours=${encodeURIComponent(hours)}`,{
+            method: "PUT",
+        });
+
+        if (!response.ok){
+            document.getElementById("updateEmpHoursMessage").textContent = "Error: " + response.statusText;
+            return;
+        }
+
+        const result = await response.json();
+
+        document.getElementById("updateEmpHoursMessage").textContent = `Employee '${name}' hours updated.`;
+
+        document.getElementById("updateEmpHoursForm").reset();
+
+    } catch (error) {
+        console.error("Fetch error:", error)
+        document.getElementById("updateEmpHoursMessage").textContent = "Failed to connect to the server";
+    }
+
 });
