@@ -18,7 +18,8 @@ header {
   padding: 2rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: rgb(185, 187, 187);
+  box-shadow: 10px 5px 5px #2c3e50;
 }
 
 .requestDiv h2 {
@@ -35,10 +36,20 @@ header {
 }
 
 body{
+  background-color: #5c6d7e;
   margin: 0;
 }
 
 html{
   margin: 0;
   padding: 0;
+}
+
+li {
+  list-style-type: none;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: 1px solid black;
+  margin: 2px;
+  padding: 2px;
+  background-color: #ccc;
 }

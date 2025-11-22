@@ -2,7 +2,7 @@
   {
     "Name": "Kyle",
     "HourlyWage": 18.25,
-    "HoursScheduled": 40
+    "HoursScheduled": 55
   },
   {
     "Name": "John",
@@ -15,8 +15,8 @@
     "HoursScheduled": 30
   },
   {
-    "Name": "Ben",
-    "HourlyWage": 17.5,
-    "HoursScheduled": 47
+    "Name": "Kyle H",
+    "HourlyWage": 16,
+    "HoursScheduled": 15
   }
 ]

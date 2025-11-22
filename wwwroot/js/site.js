@@ -1,4 +1,4 @@
-﻿document.getElementById("loadEmployees").addEventListener("click", async (e) => {
+﻿document.getElementById("loadEmployees").addEventListener("click", async () => {
     try{
         const response = await fetch("/employees");
 
@@ -13,7 +13,7 @@
 
         employees.forEach(emp => {
             const li = document.createElement("li");
-            li.textContent = `${emp.name} - ${emp.hourlyWage} - ${emp.hoursScheduled}`;
+            li.textContent = `${emp.name} | $${emp.hourlyWage}/hr | ${emp.hoursScheduled} hours scheduled`;
             employeesUl.appendChild(li);
         });
     } 
@@ -25,7 +25,7 @@
 });
 
 
-document.getElementById("loadReport").addEventListener("click", async (e) => {
+document.getElementById("loadReport").addEventListener("click", async () => {
     try{
         const response = await fetch("/report/weekly");
 
@@ -38,13 +38,13 @@ document.getElementById("loadReport").addEventListener("click", async (e) => {
 
         const reportDisplay = document.getElementById("reportList");
         reportDisplay.innerHTML = `<p>Total Payroll: ${report.totalPayroll}</p>
-                                <p>Overtime Employees: ${report.otCount}</p>`;
+                                <p>Overtime Employees: ${report.otCount}, ${report.otEmployees}</p>`;
         
         const employeesUl = document.getElementById("reportEmployees");
         employeesUl.innerHTML = "";
         report.employees.forEach(emp => {
             const li = document.createElement("li");
-            li.textContent = `${emp.name} - ${emp.hourlyWage} - ${emp.hoursScheduled}`;
+            li.textContent = `${emp.name} | $${emp.weeklyPay} | ${emp.hoursScheduled} hours worked`;
             employeesUl.appendChild(li);
         });
     }
@@ -125,8 +125,6 @@ document.getElementById("updateEmpHoursForm").addEventListener("submit", async (
 
     const name = document.getElementById("updateEmpHoursName").value;
     const hours = parseInt(document.getElementById("updateEmpHours").value);
-    console.log(name);
-    console.log(hours);
 
     try{
         const response = await fetch(`/employees/${encodeURIComponent(name)}?newHours=${encodeURIComponent(hours)}`,{
@@ -138,9 +136,7 @@ document.getElementById("updateEmpHoursForm").addEventListener("submit", async (
             return;
         }
 
-        const result = await response.json();
-
-        document.getElementById("updateEmpHoursMessage").textContent = `Employee '${name}' hours updated.`;
+        document.getElementById("updateEmpHoursMessage").textContent = `Employee '${name}' hours updated to ${hours}.`;
 
         document.getElementById("updateEmpHoursForm").reset();
 

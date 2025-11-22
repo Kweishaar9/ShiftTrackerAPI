@@ -48,14 +48,19 @@ app.MapGet("/report/weekly", () =>
 {
     double payroll = 0;
     int otEmployees = 0;
+    string otEmps = "";
     var employeeReport = new List<object>();
+    
 
     foreach (Employee e in staff)
     {
         double pay = e.WeeklyPay();
         bool isOt = e.HoursScheduled > 40;
+        
         if (isOt)
         {
+            Console.WriteLine(e.Name);
+            otEmps += $"{e.Name} ";
             otEmployees++;
         }
 
@@ -76,7 +81,9 @@ app.MapGet("/report/weekly", () =>
     {
         totalPayroll = payroll,
         otCount = otEmployees,
-        employees = employeeReport
+        employees = employeeReport,
+        otEmployees = otEmps
+
 
     });
 
