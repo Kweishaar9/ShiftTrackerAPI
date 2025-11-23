@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
-  gap: 10px;
   margin: 25px auto;
 }
 
@@ -39,7 +38,7 @@ header h1 {
 }
 
 header {
-  background-color: rgb(185, 187, 187);
+  background-color: #d0d4d8;
   padding: 0px;
   margin: 0;
 }
@@ -50,7 +49,7 @@ header {
   padding: 2rem;
   border: 1px solid #ccc;
   border-radius: 15px;
-  background-color: rgb(185, 187, 187);
+  background-color: #d0d4d8;
   box-shadow: 10px 5px 5px #2c3e50;
 }
 
@@ -58,12 +57,13 @@ header {
   display: inline-block;
   margin-top: 0;
   font-family: 'DM sans', sans-serif;
+  color: #1c1c1c;
 }
 
 .requestDiv:hover {
-  transform: translateY(-5px);
+  transform: translateY(-1px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.678);
-  transition: .1s ease;
+  transition: .015s ease;
 }
 .requestButton {
   display: inline-block;
@@ -71,9 +71,22 @@ header {
   padding: 3px 6px;
   font-size: 1rem;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4a5f78;
+  color: white;
+}
+
+.requestButton:hover {
+  background-color: #5c6d7e;
+  color: #ccc;
+  transition: ease .25s;
+  width: 25px;
+  height: 25px;
 }
 
 body{
+  background: linear-gradient(135deg, #546b7a, #1d344b);
   font-family: 'DM sans', sans-serif;
   background-color: #5c6d7e;
   margin: 0;
@@ -83,14 +96,29 @@ html{
   margin: 0;
   padding: 0;
 }
+input[type="text"], input[type="number"] {
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 80%;
+  font-size: 14px;
+}
+input:focus {
+  outline: none;
+  border: 2px solid #2c3e50;
+  box-shadow: 0 0 5px #2c3e50;
+}
 
 li {
+  align-items: center;
   list-style-type: none;
   font-family:'DM sans', sans-serif;
+  background-color: #e5e7eb;
   border: 1px solid black;
-  margin: 2px;
-  padding: 2px 5px 2px 5px;
-  background-color: #ccc;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 4px 8px;
+  font-size: .9rem;
 }
 
 form{
@@ -102,23 +130,37 @@ form input {
   font-family: 'DM sans', sans-serif;
   width: 450px;
   margin: 5px auto;
+  margin-bottom: 10px;
   
 }
 
 form button {
-  background-color: #ccc;
+  font-family: 'DM sans', sans-serif;
+  border: none;
+  background-color: #4a5f78;
+  color: white;
   margin: 0 auto;
   width: 250px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 20px;
 }
 
 form button:hover{
+  cursor: pointer;
   background-color: #5c6d7e;
   color: #ccc;
   transition: ease .25s;
+  width: 275px;
+  height: 30px;
+  
 }
 
-.empButton {
-  font-family: 'DM sans', sans-serif;
+.statusMessage{
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 1420px){

@@ -37,7 +37,7 @@
                     <input type="number" id="empHours" placeholder="Hours Scheduled" min="0" required>
                     <button class = "empButton" type="submit">Add Employee</button>
                 </form>
-            <p id="addEmpMessage"></p>
+            <p class="statusMessage"id="addEmpMessage"></p>
             </div>
 
             <div class="requestDiv" id="gridItem4">
@@ -46,17 +46,17 @@
                     <input type="text" id="delEmpName" placeholder="Name" required>
                     <button class="empButton" type ="submit">Delete Employee</button>
                 </form>
-                <p id="delEmpMessage"></p>
+                <p class="statusMessage" id="delEmpMessage"></p>
             </div>
 
             <div class="requestDiv" id="gridItem5">
                 <h2><i class="fa-solid fa-clock"></i> Update Employee Hours</h2>
                 <form id="updateEmpHoursForm">
                     <input type="text" id="updateEmpHoursName" placeholder="Name" required>
-                    <input type="number" id="updateEmpHours" required>
+                    <input type="number" id="updateEmpHours" placeholder="New Hours" required>
                     <button type="submit">Update Hours</button>
                 </form>
-                <p id="updateEmpHoursMessage"></p>
+                <p class="statusMessage" id="updateEmpHoursMessage"></p>
             </div>
 
         </div>

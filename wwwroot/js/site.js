@@ -37,7 +37,7 @@ document.getElementById("loadReport").addEventListener("click", async () => {
         const report = await response.json();
 
         const reportDisplay = document.getElementById("reportList");
-        reportDisplay.innerHTML = `<p>Total Payroll: ${report.totalPayroll}</p>
+        reportDisplay.innerHTML = `<p>Total Payroll: $${report.totalPayroll}</p>
                                 <p>Overtime Employees: ${report.otCount}, ${report.otEmployees}</p>`;
         
         const employeesUl = document.getElementById("reportEmployees");
