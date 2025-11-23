@@ -11,12 +11,17 @@
   },
   {
     "Name": "Nick",
-    "HourlyWage": 16.75,
+    "HourlyWage": 18,
     "HoursScheduled": 30
   },
   {
     "Name": "Kyle H",
     "HourlyWage": 16,
     "HoursScheduled": 15
+  },
+  {
+    "Name": "Bryce",
+    "HourlyWage": 15,
+    "HoursScheduled": 6
   }
 ]

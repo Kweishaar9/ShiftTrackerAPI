@@ -84,7 +84,7 @@ document.getElementById("addEmployeeForm").addEventListener("submit", async (e) 
 
         const result = await response.json();
 
-        document.getElementById("addEmpMessage").textContent = `Employee '${result.name}' added successfully!`;
+        document.getElementById("addEmpMessage").textContent = `Employee '${result.name}' added successfully!`; 
 
         document.getElementById("addEmployeeForm").reset();
 

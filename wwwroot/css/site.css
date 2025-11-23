@@ -1,9 +1,41 @@
+#allRequests{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  margin: 25px auto;
+}
+
+#gridItem1{
+  grid-column: 1;
+  grid-row: 1;
+}
+#gridItem2{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#gridItem3{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#gridItem4{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#gridItem5{
+  grid-column: span 2;
+  grid-row: 3;
+}
+
 header h1 {
-    color: #2c3e50;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 0px;
-    margin-top: 0;
-    font-size: 3rem;
+  color: #2c3e50;
+  font-family: 'DM sans', sans-serif;
+  letter-spacing: -3px;
+  margin-top: 0;
+  font-size: 3rem;
 }
 
 header {
@@ -13,11 +45,11 @@ header {
 }
 
 .requestDiv {
-  width: 50%;
+  width: 500px;
   margin: 2em auto;
   padding: 2rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: rgb(185, 187, 187);
   box-shadow: 10px 5px 5px #2c3e50;
 }
@@ -25,7 +57,13 @@ header {
 .requestDiv h2 {
   display: inline-block;
   margin-top: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'DM sans', sans-serif;
+}
+
+.requestDiv:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.678);
+  transition: .1s ease;
 }
 .requestButton {
   display: inline-block;
@@ -36,6 +74,7 @@ header {
 }
 
 body{
+  font-family: 'DM sans', sans-serif;
   background-color: #5c6d7e;
   margin: 0;
 }
@@ -47,9 +86,44 @@ html{
 
 li {
   list-style-type: none;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:'DM sans', sans-serif;
   border: 1px solid black;
   margin: 2px;
-  padding: 2px;
+  padding: 2px 5px 2px 5px;
   background-color: #ccc;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  font-family: 'DM sans', sans-serif;
+  width: 450px;
+  margin: 5px auto;
+  
+}
+
+form button {
+  background-color: #ccc;
+  margin: 0 auto;
+  width: 250px;
+}
+
+form button:hover{
+  background-color: #5c6d7e;
+  color: #ccc;
+  transition: ease .25s;
+}
+
+.empButton {
+  font-family: 'DM sans', sans-serif;
+}
+
+@media screen and (max-width: 1420px){
+  #allRequests{
+    display: block;
+  }
+  
 }

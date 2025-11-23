@@ -4,59 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <main>
         <header>
-            <h1>SHIFTRAC</h1>
+            <h1><i class="fa-regular fa-clipboard"></i>SHIFTRAC</h1>
         </header>
-        <div class="requestDiv">
-            <h2>Employees</h2>
-            <button class="requestButton" id="loadEmployees">V</button>
-            <ul id="employeesList"></ul>
-        </div>
+        <div id="allRequests">
 
-        <div class="requestDiv">
-            <h2>Weekly Report</h2>
-            <button class="requestButton" id="loadReport">V</button>
-            <div id="reportList"></div>
-            <ul id="reportEmployees"></ul>
-        </div>
+            <div class="requestDiv" id="gridItem1">
+                <h2><i class="fa-solid fa-user"></i> Employees</h2>
+                <button class="requestButton" id="loadEmployees">V</button>
+                <ul id="employeesList"></ul>
+            </div>
 
-        <div class="requestDiv">
-            <h2>Add Employee</h2>
-            <form id="addEmployeeForm">
-                <input type="text" id="empName" placeholder="Name" required>
-                <input type="number" id="empWage" placeholder="Hourly Wage" step="0.01" required>
-                <input type="number" id="empHours" placeholder="Hours Scheduled" min="0" required>
-                <button type="submit">Add Employee</button>
-            </form>
-           <p id="addEmpMessage"></p>
-        </div>
+            <div class="requestDiv" id="gridItem2">
+                <h2><i class="fa-solid fa-chart-column"></i> Weekly Report</h2>
+                <button class="requestButton" id="loadReport">V</button>
+                <div id="reportList"></div>
+                <ul id="reportEmployees"></ul>
+            </div>
 
-        <div class="requestDiv">
-            <h2>Delete Employee</h2>
-            <form id="deleteEmpForm">
-                <input type="text" id="delEmpName" placeholder="Name" required>
-                <button type="submit">Delete Employee</button>
-            </form>
-            <p id="delEmpMessage"></p>
-        </div>
+            <div class="requestDiv" id="gridItem3">
+                <h2><i class="fa-solid fa-circle-plus"></i> Add Employee</h2>
+                <form id="addEmployeeForm">
+                    <input type="text" id="empName" placeholder="Name" required>
+                    <input type="number" id="empWage" placeholder="Hourly Wage" step="0.01" required>
+                    <input type="number" id="empHours" placeholder="Hours Scheduled" min="0" required>
+                    <button class = "empButton" type="submit">Add Employee</button>
+                </form>
+            <p id="addEmpMessage"></p>
+            </div>
 
-        <div class="requestDiv">
-            <h2>Update Employee Hours</h2>
-            <form id="updateEmpHoursForm">
-                <input type="text" id="updateEmpHoursName" placeholder="Name" required>
-                <input type="number" id="updateEmpHours" required>
-                <button type="submit">Update Hours</button>
-            </form>
-            <p id="updateEmpHoursMessage"></p>
-        </div>
+            <div class="requestDiv" id="gridItem4">
+                <h2><i class="fa-solid fa-circle-minus"></i> Delete Employee</h2>
+                <form id="deleteEmpForm">
+                    <input type="text" id="delEmpName" placeholder="Name" required>
+                    <button class="empButton" type ="submit">Delete Employee</button>
+                </form>
+                <p id="delEmpMessage"></p>
+            </div>
 
+            <div class="requestDiv" id="gridItem5">
+                <h2><i class="fa-solid fa-clock"></i> Update Employee Hours</h2>
+                <form id="updateEmpHoursForm">
+                    <input type="text" id="updateEmpHoursName" placeholder="Name" required>
+                    <input type="number" id="updateEmpHours" required>
+                    <button type="submit">Update Hours</button>
+                </form>
+                <p id="updateEmpHoursMessage"></p>
+            </div>
+
+        </div>
 
     </main>
-
+    <script src="https://kit.fontawesome.com/d3510d922f.js" crossorigin="anonymous"></script>
     <script src="js/site.js"></script>
 </body>
 </html>
